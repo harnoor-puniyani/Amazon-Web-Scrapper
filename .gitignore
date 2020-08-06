@@ -1,0 +1,4 @@
+chromedriver.exe 
+/amazon-env
+settings.json
+__pycache__/amazon_config.cpython-38.pyc

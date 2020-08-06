@@ -12,7 +12,7 @@ FILTERS = {
 BASE_URL = 'https://www.amazon.in'
 
 def get_chrome_web_driver(options):
-    return webdriver.Chrome('./chromedriver.exe',chrome_options = options)
+    return webdriver.Chrome('./chromedriver',chrome_options = options)
 
 def get_web_driver_options():
     return webdriver.ChromeOptions()

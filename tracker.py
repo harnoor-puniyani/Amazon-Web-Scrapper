@@ -59,12 +59,18 @@ class AmazonAPI:
 
     def get_product_price(self):
         try:
-            return '99'
-            # self.driver.find_element_by_id('priceblock_ourprice').text()
-        except Exception as e:
-            print(e)
-            print(f"can't get price of the product : {self.driver.current_url}")
-            return None
+            # return '99'
+            prize = self.driver.find_element_by_id('priceblock_ourprice').text
+            prize = self.convert_price(prize)
+        except NoSuchElementException:
+            try:
+                availability = self.driver.find_element_by_id('availability').text
+                if 'Available' in  availability:
+                    
+            except Exception as e:
+                print(e)
+                print(f"can't get price of the product : {self.driver.current_url}")
+                return None
 
     def get_product_seller(self):
         try:
